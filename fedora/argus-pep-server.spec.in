@@ -24,7 +24,7 @@ Requires: jpackage-utils
 Requires: redhat-lsb
 Requires: argus-pep-common
 Requires: argus-pdp-pep-common >= 1.4
-Requires: voms-api-java >= 3
+Requires: voms-api-java3
 
 %description 
 Argus PEP (Policy Enforcement Point) Server.
@@ -63,21 +63,20 @@ make DESTDIR=$RPM_BUILD_ROOT install
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+
 %pre
-# on update (>1) stop the service, and clean up the lib directory
-if [ $1 -gt 1 ] ; then
+# on install (1): nothing
+# on upgrade (2): stop the service, and clean up the lib directory
+if [ $1 -eq 2 ] ; then
     /sbin/service argus-pepd stop > /dev/null 2>&1 || :
-    # delete all old bundled jar files and links
-    if [ -d /var/lib/argus/pepd/lib ] ; then
-        rm -f /var/lib/argus/pepd/lib/endorsed/*.jar 
-        rm -f /var/lib/argus/pepd/lib/*.jar
-    fi
+    # delete old jar 
+    find /var/lib/argus/pepd/lib -name "*.jar" -exec rm {} \;
 fi
 
+
 %post
-# create links to /usr/share/java jar files
-build-jar-repository -s -p /var/lib/argus/pepd/lib argus-pep-common argus-pdp-pep-common voms-api-java trustmanager bcprov 
-# on install (1) register the service in init.d
+# on install (1): register the service in init.d
+# on upgrade (2): nothing
 if [ $1 -eq 1 ]; then 
     /sbin/chkconfig --add argus-pepd
 fi
@@ -86,24 +85,22 @@ chmod -f 640 %{_sysconfdir}/argus/pepd/pepd.ini
 chmod -f 750 %{_datadir}/argus/pepd/sbin/pepdctl
 chmod -f 750 %{_localstatedir}/log/argus/pepd
 
+
 %preun
-# on uninstall (0) stop and deregister the service
+# on uninstall (0): stop and deregister the service
+# on upgrade (1): nothing
 if [ $1 -eq 0 ] ; then
     /sbin/service argus-pepd stop > /dev/null 2>&1 || :
     /sbin/chkconfig --del argus-pepd
 fi
 
 %postun
-# on update (1) restart the service 
-# on full remove (0) clean up the lib dir
+# on uninstall (0): nothing
+# on upgrade (1): restart the service 
 if [ $1 -eq 1 ] ; then
     /sbin/service argus-pepd start
-elif [ $1 -eq 0 ] ; then
-    # delete all the links created in %post scriptlet
-    if [ -d /var/lib/argus/pepd/lib ] ; then
-        rm -f /var/lib/argus/pepd/lib/*.jar
-    fi
 fi
+
 
 %files
 %defattr(-,root,root,-)
@@ -125,12 +122,14 @@ fi
 %{_defaultdocdir}/argus/pepd/LICENSE
 %{_defaultdocdir}/argus/pepd/RELEASE-NOTES
 %dir %{_localstatedir}/lib/argus/pepd/lib
-%{_localstatedir}/lib/argus/pepd/lib/argus-pepd-1.5.2.jar
+%{_localstatedir}/lib/argus/pepd/lib/argus-pepd-1.6.0.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-codec-1.3.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-collections-3.1.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-httpclient-3.0.1.jar
+%{_localstatedir}/lib/argus/pepd/lib/commons-io-1.4.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-lang-2.1.jar
 %{_localstatedir}/lib/argus/pepd/lib/ehcache-core-1.7.2.jar
+
 %{_localstatedir}/lib/argus/pepd/lib/ini4j-0.5.2.jar
 %{_localstatedir}/lib/argus/pepd/lib/jcl-over-slf4j-1.5.8.jar
 %{_localstatedir}/lib/argus/pepd/lib/jetty-6.1.18.jar
@@ -158,9 +157,17 @@ fi
 %{_localstatedir}/lib/argus/pepd/lib/endorsed/xercesImpl-2.9.1.jar
 %{_localstatedir}/lib/argus/pepd/lib/endorsed/xml-apis-1.3.04.jar
 %{_localstatedir}/lib/argus/pepd/lib/endorsed/xml-resolver-1.2.jar
+%dir %{_localstatedir}/lib/argus/pepd/lib/provided
+%{_localstatedir}/lib/argus/pepd/lib/provided/bcmail-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/provided/bcprov-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/provided/canl-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/provided/voms-api-java-*.jar
 %dir %{_localstatedir}/log/argus/pepd
 
 %changelog
+* Thu Nov 18 2012 Valery Tschopp <valery.tschopp@switch.ch> 1.6.0-1 
+- Upstream version 1.6.0 for EMI-3.
+
 * Mon Jul 30 2012 Valery Tschopp <valery.tschopp@switch.ch> 1.5.2-1
 - Self managed packaging with spec file.
 
