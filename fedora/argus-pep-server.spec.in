@@ -165,8 +165,11 @@ fi
 %dir %{_localstatedir}/log/argus/pepd
 
 %changelog
+* Tue Jan 29 2013 Valery Tschopp <valery.tschopp@switch.ch> 1.6.0-2 
+- Upstream version 1.6.0 for EMI-3 (RC2).
+
 * Thu Nov 18 2012 Valery Tschopp <valery.tschopp@switch.ch> 1.6.0-1 
-- Upstream version 1.6.0 for EMI-3.
+- Upstream version 1.6.0 for EMI-3 (RC1).
 
 * Mon Jul 30 2012 Valery Tschopp <valery.tschopp@switch.ch> 1.5.2-1
 - Self managed packaging with spec file.
