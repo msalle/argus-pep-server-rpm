@@ -19,7 +19,7 @@
 #
 name = argus-pep-server
 version = 1.6.0
-release = 1
+release = 2
 
 dist_url = http://argus-authz.github.com/$(name)/distrib/$(name)-$(version).tar.gz
 
@@ -66,3 +66,9 @@ git_source:
 	(cd $(name) && make dist)
 	mkdir -p $(rpmbuild_dir)/SOURCES
 	cp $(name)/$(name)-$(version).tar.gz $(rpmbuild_dir)/SOURCES
+
+
+clean_repo:
+	@echo "Deleting Maven local repo /tmp/m2-repository"
+	test ! -d /tmp/m2-repository || rm -fr /tmp/m2-repository
+
