@@ -19,7 +19,7 @@
 #
 name = argus-pep-server
 version = 1.6.0
-release = 2
+release = 3
 
 dist_url = http://argus-authz.github.com/$(name)/distrib/$(name)-$(version).tar.gz
 
