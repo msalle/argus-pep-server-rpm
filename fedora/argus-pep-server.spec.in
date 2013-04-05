@@ -165,8 +165,11 @@ fi
 %dir %{_localstatedir}/log/argus/pepd
 
 %changelog
+* Fri Apr 5 2013 Valery Tschopp <valery.tschopp@switch.ch> 1.6.1-1
+- Upstream version 1.6.1 for EMI-3 update.
+
 * Wed Jan 30 2013 Valery Tschopp <valery.tschopp@switch.ch> 1.6.0-3
-- Upstream version 1.6.0 for EMI-3 (RC3).
+- Upstream version 1.6.0 for EMI-3 release.
 
 * Tue Jan 29 2013 Valery Tschopp <valery.tschopp@switch.ch> 1.6.0-2 
 - Upstream version 1.6.0 for EMI-3 (RC2).
