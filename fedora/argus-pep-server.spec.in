@@ -122,7 +122,7 @@ fi
 %{_defaultdocdir}/argus/pepd/LICENSE
 %{_defaultdocdir}/argus/pepd/RELEASE-NOTES
 %dir %{_localstatedir}/lib/argus/pepd/lib
-%{_localstatedir}/lib/argus/pepd/lib/argus-pepd-@@SPEC_RELEASE@@.jar
+%{_localstatedir}/lib/argus/pepd/lib/argus-pepd-@@SPEC_VERSION@@.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-codec-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-collections-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-httpclient-*.jar
