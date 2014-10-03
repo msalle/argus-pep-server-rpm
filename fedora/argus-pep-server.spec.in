@@ -122,40 +122,40 @@ fi
 %{_defaultdocdir}/argus/pepd/LICENSE
 %{_defaultdocdir}/argus/pepd/RELEASE-NOTES
 %dir %{_localstatedir}/lib/argus/pepd/lib
-%{_localstatedir}/lib/argus/pepd/lib/argus-pepd-1.6.2rc1.jar
-%{_localstatedir}/lib/argus/pepd/lib/commons-codec-1.3.jar
-%{_localstatedir}/lib/argus/pepd/lib/commons-collections-3.1.jar
-%{_localstatedir}/lib/argus/pepd/lib/commons-httpclient-3.0.1.jar
-%{_localstatedir}/lib/argus/pepd/lib/commons-io-1.4.jar
-%{_localstatedir}/lib/argus/pepd/lib/commons-lang-2.1.jar
-%{_localstatedir}/lib/argus/pepd/lib/ehcache-core-1.7.2.jar
-%{_localstatedir}/lib/argus/pepd/lib/ini4j-0.5.2.jar
-%{_localstatedir}/lib/argus/pepd/lib/jcl-over-slf4j-1.5.8.jar
-%{_localstatedir}/lib/argus/pepd/lib/jetty-6.1.18.jar
-%{_localstatedir}/lib/argus/pepd/lib/jetty-java5-threadpool-6.1.18.jar
-%{_localstatedir}/lib/argus/pepd/lib/jetty-sslengine-6.1.18.jar
-%{_localstatedir}/lib/argus/pepd/lib/jetty-util-6.1.18.jar
-%{_localstatedir}/lib/argus/pepd/lib/jna-3.0.9.jar
-%{_localstatedir}/lib/argus/pepd/lib/jna-posix-1.0.3.jar
-%{_localstatedir}/lib/argus/pepd/lib/joda-time-1.6.jar
-%{_localstatedir}/lib/argus/pepd/lib/jul-to-slf4j-1.5.8.jar
-%{_localstatedir}/lib/argus/pepd/lib/log4j-over-slf4j-1.5.8.jar
-%{_localstatedir}/lib/argus/pepd/lib/logback-classic-0.9.18.jar
-%{_localstatedir}/lib/argus/pepd/lib/logback-core-0.9.18.jar
-%{_localstatedir}/lib/argus/pepd/lib/not-yet-commons-ssl-0.3.9.jar
-%{_localstatedir}/lib/argus/pepd/lib/opensaml-2.3.2.jar
-%{_localstatedir}/lib/argus/pepd/lib/openws-1.3.1.jar
-%{_localstatedir}/lib/argus/pepd/lib/servlet-api-2.5-20081211.jar
-%{_localstatedir}/lib/argus/pepd/lib/slf4j-api-1.5.8.jar
-%{_localstatedir}/lib/argus/pepd/lib/velocity-1.5.jar
-%{_localstatedir}/lib/argus/pepd/lib/xmlsec-1.4.3.jar
-%{_localstatedir}/lib/argus/pepd/lib/xmltooling-1.2.2.jar
+%{_localstatedir}/lib/argus/pepd/lib/argus-pepd-@@SPEC_VERSION@@.jar
+%{_localstatedir}/lib/argus/pepd/lib/commons-codec-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/commons-collections-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/commons-httpclient-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/commons-io-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/commons-lang-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/ehcache-core-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/ini4j-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/jcl-over-slf4j-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/jetty-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/jetty-java5-threadpool-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/jetty-sslengine-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/jetty-util-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/jna-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/jna-posix-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/joda-time-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/jul-to-slf4j-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/log4j-over-slf4j-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/logback-classic-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/logback-core-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/not-yet-commons-ssl-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/opensaml-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/openws-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/servlet-api-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/slf4j-api-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/velocity-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/xmlsec-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/xmltooling-*.jar
 %dir %{_localstatedir}/lib/argus/pepd/lib/endorsed
-%{_localstatedir}/lib/argus/pepd/lib/endorsed/serializer-2.7.1.jar
-%{_localstatedir}/lib/argus/pepd/lib/endorsed/xalan-2.7.1.jar
-%{_localstatedir}/lib/argus/pepd/lib/endorsed/xercesImpl-2.9.1.jar
-%{_localstatedir}/lib/argus/pepd/lib/endorsed/xml-apis-1.3.04.jar
-%{_localstatedir}/lib/argus/pepd/lib/endorsed/xml-resolver-1.2.jar
+%{_localstatedir}/lib/argus/pepd/lib/endorsed/serializer-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/endorsed/xalan-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/endorsed/xercesImpl-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/endorsed/xml-apis-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/endorsed/xml-resolver-*.jar
 %dir %{_localstatedir}/lib/argus/pepd/lib/provided
 %{_localstatedir}/lib/argus/pepd/lib/provided/bcmail-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/provided/bcprov-*.jar
@@ -164,6 +164,10 @@ fi
 %dir %{_localstatedir}/log/argus/pepd
 
 %changelog
+* Thu Oct  2 2014 Mischa Salle <msalle@nikhef.nl> 1.6.2-1
+- Replace exact versions, except argus-pepd, in filelist with wildcard.
+- Upstream version 1.6.2 for EMI-3.
+
 * Thu Feb 20 2014 Valery Tschopp <valery.tschopp@switch.ch> 1.6.2-0
 - Version 1.6.2 (RC1) for EMI-3 update.
 
