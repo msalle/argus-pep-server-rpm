@@ -24,7 +24,6 @@ Requires: jpackage-utils
 Requires: redhat-lsb
 Requires: argus-pep-common >= 2.3
 Requires: argus-pdp-pep-common >= 1.4
-Requires: voms-api-java3
 
 %description 
 Argus PEP (Policy Enforcement Point) Server.
