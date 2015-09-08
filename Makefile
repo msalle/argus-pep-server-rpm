@@ -18,8 +18,8 @@
 # RPM packaging
 #
 name = argus-pep-server
-version = 1.6.2
-release = 1
+version = 1.7.0
+release = 0
 
 dist_url = http://argus-authz.github.com/$(name)/distrib/$(name)-$(version).tar.gz
 
