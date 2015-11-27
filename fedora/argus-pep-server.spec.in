@@ -161,9 +161,9 @@ fi
 %dir %{_localstatedir}/log/argus/pepd
 
 %if 0%{?rhel} >= 7 || 0%{?fedora} >= 21
-/lib/systemd/system/argus-pdp.service
+/lib/systemd/system/argus-pepd.service
 %else
-%exclude /lib/systemd/system/argus-pdp.service
+%exclude /lib/systemd/system/argus-pepd.service
 %endif
 
 %changelog
