@@ -128,7 +128,7 @@ fi
 %{_localstatedir}/lib/argus/pepd/lib/commons-httpclient-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-io-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-lang-*.jar
-%{_localstatedir}/lib/argus/pepd/lib/ehcache-core-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/ehcache-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/esapi-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/ini4j-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/jcl-over-slf4j-*.jar
