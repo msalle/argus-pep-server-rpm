@@ -23,8 +23,8 @@ Requires: java
 Requires: jpackage-utils
 Requires: redhat-lsb
 Requires: argus-pep-common >= 2.3
-Requires: argus-pdp-pep-common >= 1.4
-Requires: voms-api-java3
+Requires: argus-pdp-pep-common >= 1.5
+Requires: voms-api-java 
 
 %description 
 Argus PEP (Policy Enforcement Point) Server.
@@ -128,15 +128,13 @@ fi
 %{_localstatedir}/lib/argus/pepd/lib/commons-httpclient-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-io-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/commons-lang-*.jar
-%{_localstatedir}/lib/argus/pepd/lib/ehcache-core-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/ehcache-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/esapi-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/ini4j-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/jcl-over-slf4j-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/jetty-*.jar
-%{_localstatedir}/lib/argus/pepd/lib/jetty-java5-threadpool-*.jar
-%{_localstatedir}/lib/argus/pepd/lib/jetty-sslengine-*.jar
-%{_localstatedir}/lib/argus/pepd/lib/jetty-util-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/javax.*.jar
 %{_localstatedir}/lib/argus/pepd/lib/jna-*.jar
-%{_localstatedir}/lib/argus/pepd/lib/jna-posix-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/joda-time-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/jul-to-slf4j-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/log4j-over-slf4j-*.jar
@@ -145,7 +143,6 @@ fi
 %{_localstatedir}/lib/argus/pepd/lib/not-yet-commons-ssl-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/opensaml-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/openws-*.jar
-%{_localstatedir}/lib/argus/pepd/lib/servlet-api-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/slf4j-api-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/velocity-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/xmlsec-*.jar
@@ -157,13 +154,25 @@ fi
 %{_localstatedir}/lib/argus/pepd/lib/endorsed/xml-apis-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/endorsed/xml-resolver-*.jar
 %dir %{_localstatedir}/lib/argus/pepd/lib/provided
-%{_localstatedir}/lib/argus/pepd/lib/provided/bcmail-*.jar
+%{_localstatedir}/lib/argus/pepd/lib/provided/bcpkix-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/provided/bcprov-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/provided/canl-*.jar
 %{_localstatedir}/lib/argus/pepd/lib/provided/voms-api-java-*.jar
 %dir %{_localstatedir}/log/argus/pepd
 
+%if 0%{?rhel} >= 7 || 0%{?fedora} >= 21
+/lib/systemd/system/argus-pepd.service
+%else
+%exclude /lib/systemd/system/argus-pepd.service
+%endif
+
 %changelog
+* Tue Nov 17 2015 Marco Caberletti <marco.caberletti@cnaf.infn.it> 1.7.0-1
+- Add systemd unit file.
+
+* Tue Sep 8 2015 Andrea Ceccanti <andrea.ceccanti@cnaf.infn.it> 1.7.0-0
+- Pre-release packaging for 1.7.0
+
 * Thu Oct  2 2014 Mischa Salle <msalle@nikhef.nl> 1.6.2-1
 - Replace exact versions, except argus-pepd, in filelist with wildcard.
 - Upstream version 1.6.2 for EMI-3.
@@ -180,7 +189,7 @@ fi
 * Tue Jan 29 2013 Valery Tschopp <valery.tschopp@switch.ch> 1.6.0-2 
 - Upstream version 1.6.0 for EMI-3 (RC2).
 
-* Thu Nov 18 2012 Valery Tschopp <valery.tschopp@switch.ch> 1.6.0-1 
+* Sun Nov 18 2012 Valery Tschopp <valery.tschopp@switch.ch> 1.6.0-1 
 - Upstream version 1.6.0 for EMI-3 (RC1).
 
 * Mon Jul 30 2012 Valery Tschopp <valery.tschopp@switch.ch> 1.5.2-1
