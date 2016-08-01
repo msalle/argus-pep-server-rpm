@@ -117,6 +117,8 @@ fi
 %{_datadir}/argus/pepd/doc
 %{_datadir}/argus/pepd/lib
 %{_datadir}/argus/pepd/sbin/pepdctl
+%{_sysconfdir}/grid-security/certificates/policy-aspen-birch-cedar.info
+%{_sysconfdir}/grid-security/certificates/policy-aspen-birch-cedar-dogwood.info
 %dir %{_defaultdocdir}/argus/pepd
 %{_defaultdocdir}/argus/pepd/COPYRIGHT
 %{_defaultdocdir}/argus/pepd/LICENSE
@@ -167,6 +169,9 @@ fi
 %endif
 
 %changelog
+* Mon Aug  1 2016 Mischa Salle <msalle@nikhef.nl> 1.7.1-1
+- Add two Argus-specific policy info files.
+
 * Tue Nov 17 2015 Marco Caberletti <marco.caberletti@cnaf.infn.it> 1.7.0-1
 - Add systemd unit file.
 
